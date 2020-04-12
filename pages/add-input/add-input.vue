@@ -43,13 +43,42 @@
 		},
 		data() {
 			return {
+				isget:false,
 				showpopup:true,
 				yinsi:"所有人可见",
 				text:"",
 				imglist:[]
 			};
 		},
+		onBackPress() {
+			//
+			if(!this.text && this.imglist.length<1){return;}
+			if(!this.isget){
+				this.baocun();
+		       return true;
+			}
+	         
+		},
 		methods:{
+			//保存为草稿
+			baocun(){
+				uni.showModal({
+					content:'是否保存为草稿？',
+					cancelText:'不保存',
+					confirmText:'保存',
+					success:res=>{
+						if(res.confirm){
+							console.log("保存");
+						}else{
+							console.log("不保存");
+						}
+						this.isget = true;
+						uni.navigateBack({
+							delta:1
+						})
+					}
+				})
+			},
 			// 返回
 			back(){
 				uni.navigateBack({ delta: 1 });
