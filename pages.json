@@ -45,7 +45,8 @@
             "path" : "pages/news/news",
             "style" : {
 				"app-plus":{
-					"titleNView":false
+					"titleNView":false,
+					"bounce":"none"
 				}
 			}
         }
