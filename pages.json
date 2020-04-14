@@ -111,6 +111,7 @@
         ,{
             "path" : "pages/topic-detail/topic-detail",
             "style" : {
+				"enablePullDownRefresh":true,
 				"app-plus":{
 					"scrollIndicator":"none",//隐藏滚动条
 					"titleNView":{
