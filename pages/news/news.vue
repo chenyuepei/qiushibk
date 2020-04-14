@@ -25,7 +25,27 @@
 			<!-- 话题 -->
 			<swiper-item> 
 				<scroll-view scroll-y class="list">
-					话题
+					<!-- 搜索框 -->
+					<view class="search-input">
+						<input class="uni-input" placeholder-class="icon iconfont icon-sousuo topic-search" placeholder="搜索内容"/>
+					</view>
+					<!-- 轮播图 -->
+					<swiper class="topic-swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+						<block v-for="(item,index) in topic.swiper" :key="index">
+							<swiper-item>
+								<image :src="item.src" mode="widthFix" lazy-load></image>
+							</swiper-item>
+						</block>
+					</swiper>
+					<!-- 热门分类 -->
+					<topic-nav :nav="topic.nav"></topic-nav>
+					<!-- 最近更新 -->
+					<view class="topic-new">
+						<view>最近更新</view>
+						<block v-for="(item,index) in topic.list" :key="index">
+							<topic-list :item="item" :index="index"></topic-list>
+						</block>
+					</view>
 				</scroll-view>
 			</swiper-item>
 		</swiper>   
@@ -39,11 +59,15 @@
 	import newsNavBar from "../../components/news/news-nav-bar.vue";
 	import commonList from "../../components/common/common-list.vue";
 	import loadMore from "../../components/common/load-more.vue";
+	import topicNav from "../../components/news/topic-nav.vue";
+	import topicList from "../../components/news/topic-list.vue";
 	export default {
 		components:{
 			newsNavBar,
 			commonList,
-			loadMore
+			loadMore,
+			topicNav,
+			topicList
 		},
 		data() {
 			return {
@@ -128,7 +152,65 @@
 						},
 					]
 				},
-				
+				topic:{
+					swiper:[
+						{ src:"../../static/demo/banner2.jpg" },
+						{ src:"../../static/demo/banner2.jpg" },
+						{ src:"../../static/demo/banner2.jpg" },
+					],
+					nav:[
+						{name:"最新"},
+						{name:"游戏"},
+						{name:"打卡"},
+						{name:"情感"},
+						{name:"故事"},
+						{name:"喜爱"},
+					],
+					list:[
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						},
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						},
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						},
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						},
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						},
+						{
+							titlepic:"../../static/demo/topicpic/13.jpeg",
+							title:"话题名称",
+							desc:"我是话题描述",
+							totalnum:50,
+							todaynum:10
+						}
+					]
+				}
 			};
 		},
 		onLoad() {
@@ -181,5 +263,32 @@
 </script>
 
 <style>
+.search-input{
+	padding: 20upx;
+}
+.search-input>input{
+	background: #F4F4F4;
+	border-radius:10upx;
+}
+.topic-search{
+	display: flex;
+	justify-content: center;
+	font-size: 27upx;
+}
 
+.topic-swiper{
+	padding:0 20upx 20upx 20upx;
+}
+.topic-swiper image{
+	width: 100%;
+	border-radius:10upx;
+}
+
+.topic-new{
+	padding: 20upx;
+}
+.topic-new>view:first-child{
+	padding-bottom: 5upx;
+	font-size: 32upx;
+}
 </style>
