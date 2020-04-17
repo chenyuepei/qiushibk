@@ -88,6 +88,7 @@
         ,{
             "path" : "pages/search/search",
             "style" : {
+				"enablePullDownRefresh":true,
 				"app-plus":{
 					 "scrollIndicator":"none",//隐藏滚动条
 					 "bounce":"none",//关闭反弹效果
