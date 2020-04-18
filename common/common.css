@@ -11,3 +11,9 @@
 .u-f-jsb{
 	justify-content: space-between;
 }
+.u-f1{
+	flex: 1;
+}
+.u-f-column{
+	flex-direction: column;
+}

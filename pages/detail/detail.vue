@@ -14,6 +14,9 @@
 		<!-- 输入框 -->
 		<user-chat-bottom @submit="submit"></user-chat-bottom>
 
+		<!-- 分享 -->
+		<more-share :show="shareshow" @togle="togle"></more-share>
+		
 	</view>
 </template>
 
@@ -22,14 +25,17 @@
 	import time from "../../common/time.js";
 	import commentList from "../../components/detail/comment-list.vue";
 	import userChatBottom from "../../components/user-chat/user-chat-bottom.vue";
+	import moreShare from "../../components/common/more-share.vue";
 	export default {
 		components:{
 			detailInfo,
 			commentList,
-			userChatBottom
+			userChatBottom,
+			moreShare
 		},
 		data() {
 			return {
+				shareshow:false,
 				comment:{
 					count:20,
 					list:[]
@@ -59,10 +65,13 @@
 		// 监听导航右边按钮
 		onNavigationBarButtonTap(e) {
 			if(e.index==0){
-				console.log("分享")
+				this.togle();
 			}
 		},
 		methods: {
+			togle(){
+				this.shareshow=!this.shareshow
+			},
 			submit(data){
 				let obj={
 					id:1,
@@ -127,6 +136,7 @@
 </script>
 
 <style>
+/* 评论 */	
 .u-comment{
 	padding: 0 20upx;
 }
