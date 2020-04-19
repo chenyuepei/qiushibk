@@ -270,6 +270,24 @@
             	}
             }
         }
+        ,{
+            "path" : "pages/user-set-help/user-set-help",
+            "style" : {
+            	"navigationBarTitleText":"意见反馈",
+            	"app-plus":{
+            		"scrollIndicator":"none"
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/user-set-about/user-set-about",
+            "style" : {
+            	"navigationBarTitleText":"关于糗事",
+            	"app-plus":{
+            		"scrollIndicator":"none"
+            	}
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
