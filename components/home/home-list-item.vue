@@ -27,6 +27,21 @@
 					case "switchTab":
 					if(this.item.url){ uni.switchTab({url:this.item.url}) }
 						break;
+						case "clear":
+						uni.showModal({
+							title:'提示',
+							content:'是否清除缓存',
+							confirmText:'立即清除',
+							success:res=> {
+								if(res.confirm){
+									uni.clearStorage();
+									uni.showToast({
+										title:'清除缓存成功'
+									})
+								}
+							}
+						});
+						break;
 				}
 			}
 		}

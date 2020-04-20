@@ -135,6 +135,8 @@
             "path" : "pages/add-input/add-input",
             "style" : {
 				"app-plus":{
+					"animationType":"slide-in-bottom",
+					"animationDuration":200,
 					// 禁止原生导航
 					"titleNView":false
 				}
@@ -294,6 +296,23 @@
 				"app-plus":{
 					"titleNView":false,
 					"bounce":"none"
+				}
+			}
+        }
+        ,{
+            "path" : "pages/user-space/user-space",
+            "style" : {
+				"navigationBarTitleText":"个人空间",
+				"app-plus":{
+					"scrollIndicator":"none",
+					"titleNView":{
+						"type":"transparent",
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
 				}
 			}
         }
