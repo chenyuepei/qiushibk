@@ -7,7 +7,7 @@
 			<!-- 第三方登陆 -->
 			<other-login></other-login>
 			<!-- 账号密码登陆 -->
-			<view class="u-f-ajc">账号密码登陆 <view class="icon iconfont icon-jinru"></view> </view>
+			<view class="u-f-ajc" @tap="openLogin">账号密码登陆 <view class="icon iconfont icon-jinru"></view> </view>
 		</template>
 		<template v-else>
 			<!-- 登陆 -->
@@ -68,6 +68,13 @@
 			if(e.index==0){
 				uni.navigateTo({
 					url:"../user-set/user-set"
+				})
+			}
+		},
+		methods:{
+			openLogin(){
+				uni.navigateTo({
+					url:"../login/login"
 				})
 			}
 		}
