@@ -104,9 +104,7 @@
 		onNavigationBarButtonTap(e) {
 			switch (e.index){
 				case 0:
-				uni.navigateTo({
-					url:'../user-list/user-list'
-				})
+				this.User.navigate({url:'../user-list/user-list'})
 				this.hidepopup();
 					break;
 				case 1:

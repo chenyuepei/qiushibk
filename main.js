@@ -10,6 +10,11 @@ Vue.prototype.config=config
 import lib from "./common/lib.js"
 Vue.prototype.lib=lib
 
+import request from './common/request.js'
+Vue.prototype.$http=request
+
+import User from "./common/user.js"
+Vue.prototype.User = User
 
 App.mpType = 'app'
 
